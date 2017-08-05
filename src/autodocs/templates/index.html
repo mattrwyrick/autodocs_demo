@@ -1,0 +1,133 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AutoDocs</title>
+</head>
+
+
+<body>
+
+<form action={% url "index" %}>
+    <div class="main_heading_div">
+        <input type="submit" class="main_heading_text" value="AutoDocs" />
+    </div>
+</form>
+
+
+<!-- Word Converters -->
+<div id=container class="container_set_1">
+
+    <div>Word Converters</div>
+    <div class="space_filler_1"></div>
+    
+
+    <div class="container_1">
+        <form action={% url "json2word" %}>
+            <input type="submit" class="converter_link" value="JSON" />
+        </form>
+    </div>
+    <div class="space_filler_1"></div>
+
+
+    <div class="container_1">
+        <form action={% url "csv2word" %}>
+            <input type="submit" class="converter_link" value="CSV" />
+        </form>
+    </div>
+    <div class="space_filler_1"></div>
+
+
+    <div class="container_1">
+        <form action={% url "tsv2word" %}>
+            <input type="submit" class="converter_link" value="TSV" />
+        </form>
+    </div>
+    <div class="space_filler_1"></div>
+
+</div>
+
+<div class="space_filler_2"></div>
+
+
+
+<!-- PDF Converters -->
+<div class="container_set_1">
+
+    <div>PDF Converters</div>
+    <div class="space_filler_1"></div>
+
+
+    <div class="container_1" style="background-color: darkred;">
+        <form action={% url "json2pdf" %}>
+            <input type="submit" class="converter_link" value="JSON" style="color: darkred;"/>
+        </form>
+    </div>
+    <div class="space_filler_1"></div>
+
+
+    <div class="container_1" style="background-color: darkred;">
+        <form action={% url "csv2word" %}>
+            <input type="submit" class="converter_link" value="CSV" style="color: darkred;"/>
+        </form>
+    </div>
+    <div class="space_filler_1"></div>
+
+
+    <div class="container_1" style="background-color: darkred;">
+        <form action={% url "tsv2word" %}>
+            <input type="submit" class="converter_link" value="TSV" style="color: darkred;"/>
+        </form>
+    </div>
+    <div class="space_filler_1"></div>
+
+</div>
+
+<div class="space_filler_2"></div>
+
+
+
+<!-- Excel Converters -->
+<div class="container_set_1">
+
+    <div>Excel Converters</div>
+    <div class="space_filler_1"></div>
+
+
+    <div class="container_1" style="background-color: darkgreen;">
+        <form action={% url "json2pdf" %}>
+            <input type="submit" class="converter_link" value="JSON" style="color: darkgreen;"/>
+        </form>
+    </div>
+    <div class="space_filler_1"></div>
+
+
+    <div class="container_1" style="background-color: darkgreen;">
+        <form action={% url "csv2word" %}>
+            <input type="submit" class="converter_link" value="CSV" style="color: darkgreen;"/>
+        </form>
+    </div>
+    <div class="space_filler_1"></div>
+
+
+    <div class="container_1" style="background-color: darkgreen;">
+        <form action={% url "tsv2word" %}>
+            <input type="submit" class="converter_link" value="TSV" style="color: darkgreen;"/>
+        </form>
+    </div>
+    <div class="space_filler_1"></div>
+
+</div>
+
+<div class="space_filler_2"></div>
+
+
+
+</body>
+
+
+</html>

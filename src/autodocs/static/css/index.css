@@ -1,0 +1,101 @@
+body {
+    background: white;
+}
+
+.container_set_1 {
+    background-color: transparent;
+    width: 90%;
+}
+
+.container_1 {
+    background-color: cornflowerblue;
+    border: 1px solid;
+    border-color: lightgrey;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.converter_link{
+    position: relative;
+    top: 7px;
+    left: 7px;
+    color: cornflowerblue;
+    background-color: white;
+    border: 1px solid;
+    border-color: lightgrey;
+    border-radius: 5px;
+    width: 9%;
+    height: 25px;
+    font-family: arial;
+}
+
+.space_filler_1 {
+    height: 3px;
+    background-color: transparent;
+}
+
+.space_filler_2 {
+    height: 20px;
+    background-color: transparent;
+}
+
+.main_heading_div {
+    background-color: cornflowerblue;
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 5px;
+}
+
+.main_heading_text {
+    font-size: 300%;
+    font-family: Arial;
+    color: white;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.button_dropdown_1 {
+    background-color: cornflowerblue;
+    color: white;
+    font-family: Arial;
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 5px;
+    height: 25px;
+    width: 8%;
+}
+
+
+.button_dropdown_2 {
+    background-color: cornflowerblue;
+    color: white;
+    font-family: Arial;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: grey;
+    height: 25px;
+    width: 8%;
+}
+
+.input_1 {
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    border: 1px solid;
+    border-radius: 5px;
+    font-family: garamond;
+    border-color: grey;
+    height: 25px;
+}
+
+.input_text_area {
+    font-size: 14px;
+    width:90%;
+    height:30%;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: grey;
+    font-family: garamond;
+}
+
+

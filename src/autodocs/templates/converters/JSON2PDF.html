@@ -1,0 +1,102 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AutoDocs</title>
+</head>
+
+
+<body>
+
+
+<!-- Heading -->
+<form action={% url "index" %}>
+    <div class="main_heading_div" style="background-color: darkred">
+        <input type="submit" class="main_heading_text" value="JSON to Word" />
+    </div>
+</form>
+<!-- End Heading -->
+
+
+<form action="/json2pdf/" method="post">
+    {% csrf_token %}
+
+    <input class="input_1" name="file_name"  placeholder="File Name" type="text" style="width:20%;">
+    <div class="space_filler_2"></div>
+
+    <div id="input_text_div">
+        <textarea id="input_text" class="input_text_area" name="text" placeholder="Input Data Text"></textarea>
+        <div class="space_filler_2"></div>
+    </div>
+
+    <div id="rule_div">
+        <!-- Template for Dynamic Rule Form Fields -->
+        <div id="rule:0" class="rule_form" style="display: none">
+            <select class="button_dropdown_2" name="rule-rule_type:0" style="background-color: darkred">
+                <option value="key:dict/lit">Key (Other)</option>
+                <option value="key:list">Key (List)</option>
+            </select>
+
+            <input class="input_1" name="rule-key_value:0" placeholder="Key" type="text" style="width:8%">
+
+            <select class="button_dropdown_2" name="rule-text_type:0" style="background-color: darkred">
+                <option value="paragraph">Paragraph</option>
+                <option value="heading:0">Heading (0)</option>
+                <option value="heading:1">Heading (1)</option>
+                <option value="heading:2">Heading (2)</option>
+                <option value="heading:3">Heading (3)</option>
+            </select>
+
+            <input class="input_1" name="rule-rule_text:0" placeholder="Rule Text"  type="text" style="width:56.5%">
+            <button class="button_dropdown_2" type="button" onclick="removeRule(this)" style="background-color: darkred">Remove</button>
+            <div class="space_filler_1"></div>
+        </div>
+        <!-- End Template for Dynamic Rule Form Fields -->
+    </div>
+
+    <br>
+    <button class="button_dropdown_1" type="button" onclick="addRule()" style="background-color: darkred">Add Rule</button>
+    <div class="space_filler_2"></div>
+    <input class="button_dropdown_1" type="submit" value="Submit" style="background-color: darkred"/>
+
+</form>
+
+
+</body>
+
+
+<!-- Dynamic Rule Form JS -->
+<script language="javascript">
+    function addRule() {
+        var rules = document.getElementsByClassName("rule_form");
+        var index = parseInt(rules[rules.length - 1].id.split(":")[1]) + 1;
+        var id = "rule:" + index.toString();
+        var new_rule = document.getElementById("rule:0").cloneNode(true);
+        new_rule.id=id;
+        new_rule.style="display: true";
+        update_children(new_rule, index.toString());
+        document.getElementById("rule_div").appendChild(new_rule);
+    }
+
+    var update_children = function(parent, index) {
+        for (var i = 0; i < parent.childNodes.length; i++) {
+            var child = parent.childNodes[i];
+            if (typeof child.name != "undefined" && child.name.indexOf(":", false)) {
+                child.name = child.name.split(":")[0] + ":" + index;
+            }
+        }
+    };
+
+    function removeRule(element) {
+        var rule = element.parentNode;
+        rule.parentNode.removeChild(rule);
+    }
+</script>
+<!-- End Dynamic Rule Form JS -->
+
+
+</html>

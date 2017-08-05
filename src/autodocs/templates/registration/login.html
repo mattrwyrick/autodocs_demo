@@ -1,0 +1,41 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action={% url "login" %}>
+    <div class="main_heading_div">
+        <input type="submit" class="main_heading_text" value="AutoDocs" />
+    </div>
+</form>
+
+<div style="width: 20%">
+
+    <span style="color:cornflowerblue; font-size:170%">Login</span>
+    <br>
+    <div class="space_filler_1"></div>
+    <div class="space_filler_1"></div>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" class="input_1" placeholder="Username" name="username" autofocus="" required="" id="id_username" maxlength="254" style="width:100%">
+        <br>
+        <div class="space_filler_1"></div>
+        <div class="space_filler_1"></div>
+        <input type="password" class="input_1" placeholder="Password" name="password" required="" id="id_password" style="width:100%">
+        <br>
+        <div class="space_filler_1"></div>
+        <div class="space_filler_1"></div>
+        <button type="submit" class="button_dropdown_1" style="width:30%">Login</button>
+    </form>
+</div>
+
+
+</body>
+</html>
